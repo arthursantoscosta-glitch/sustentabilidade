@@ -1,0 +1,108 @@
+/* RESET: Tira margens indesejadas que os navegadores colocam por padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORES: Criamos variáveis para facilitar caso você queira mudar as cores depois */
+:root {
+    --cor-fundo: #0B1D3A; /* Azul bem escuro, tipo o espaço */
+    --cor-texto: #FFFFFF; /* Branco para dar leitura */
+    --cor-destaque: #F1C40F; /* Amarelo para chamar atenção nos títulos e botões */
+}
+
+/* ESTILO GERAL DO CORPO DO SITE */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6; /* Espaçamento entre as linhas do texto */
+}
+
+/* === MENU DO TOPO === */
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo um pouco mais escuro e transparente */
+    padding: 20px;
+    text-align: center;
+    position: sticky; /* Faz o menu grudar no topo ao rolar a página para baixo */
+    top: 0;
+}
+
+header h1 {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style: none; /* Remove as bolinhas da lista do menu */
+    display: flex; /* Coloca os links do menu lado a lado no PC */
+    justify-content: center;
+    gap: 30px; /* Espaço entre cada link */
+}
+
+nav a {
+    color: var(--cor-texto);
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-destaque); /* Muda de cor quando passa o mouse por cima */
+}
+
+/* === ESTILO DOS SLIDES (SEÇÕES) === */
+.secao-slide {
+    padding: 60px 20px;
+    max-width: 800px; /* Evita que o texto fique muito largo em telas grandes */
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Uma linha sutil separando os slides */
+}
+
+.secao-slide h2 {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+}
+
+.secao-slide ul {
+    margin-left: 25px; /* Dá um recuo na lista de bullet points */
+}
+
+/* === ESTILO DO BOTÃO === */
+button {
+    background-color: var(--cor-destaque);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Muda o cursor para a mãozinha de clique */
+    border-radius: 8px; /* Deixa as bordas arredondadas */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #D4AC0D; /* Escurece o botão ao passar o mouse */
+}
+
+/* Classe especial que esconde elementos (usada no JavaScript) */
+.escondido {
+    display: none; /* Faz o elemento sumir da tela */
+}
+
+/* Faz o texto secreto aparecer bonito */
+#mensagem-secreta {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--cor-destaque);
+    font-size: 1.2rem;
+}
+
+/* === DESIGN RESPONSIVO (MOBILE) === */
+/* Esta regra só é ativada se a tela for menor que 600px (celulares) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Coloca os links do menu um embaixo do outro no celular */
+        gap: 15px;
+    }
+}
